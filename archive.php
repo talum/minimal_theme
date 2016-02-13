@@ -11,7 +11,7 @@ Template Name: Archive Page
 			<?php while (have_posts()) : the_post(); ?>
 			<article>
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<span class="byline"><?php the_time('F jS, Y'); ?> in <?php the_category(); ?></span>
+				<date><?php the_time('F jS, Y'); ?> in <?php the_category(); ?></date>
 				<?php if (has_post_thumbnail()){
 					echo '<div class="padding-top-right-bottom float-left">';
 					echo the_post_thumbnail('thumbnail', array('class' => 'thumbnail'));
