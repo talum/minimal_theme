@@ -31,7 +31,7 @@ Header
 <?php include_once("analyticstracking.php") ?>
 
 <header>
-  <h1>Tracy Lum</h1>
+  <h1><a href="/">Tracy Lum</a></h1>
   <nav>
     <ul>
 			<?php $pages = array(
