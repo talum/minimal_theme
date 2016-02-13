@@ -125,7 +125,8 @@ article{
   margin-bottom:50px;
 }
 img{
-  max-width:100%;
+  max-width:100% !important;
+  height:auto !important;
 }
 .float-left{
   float:left;
