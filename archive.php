@@ -1,5 +1,7 @@
 <?php
-//Archive
+/*
+Template Name: Archive Page
+*/
 ?>
 
 <?php get_header(); ?>

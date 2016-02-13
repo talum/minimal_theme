@@ -39,6 +39,7 @@ h3{
 }
 a{
   text-decoration: none;
+  color:#f24b5f;
 }
 p{
   font-size:1.15rem;
@@ -106,6 +107,10 @@ date{
 }
 .float-right{
   float:right;
+}
+.post-categories{
+  list-style-type: none;
+  display:inline;
 }
 
 @media (min-width:401px){
