@@ -4,6 +4,7 @@
 html{
   font-size:16px;
   font-family: 'Georgia', serif;
+  color:#262626;
 }
 body{
   width:100%;
@@ -36,12 +37,18 @@ h1 a:hover{
 h2{
   font-size:2rem;
   font-weight: normal;
+}
+h2 a{
   color:#f24b5f;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+h2 a:hover{
+  color:#a93442;
 }
 h3{
   font-size:1.5rem;
   font-weight: normal;
-  color: #c7d645;
 }
 a{
   text-decoration: none;
@@ -74,13 +81,13 @@ nav li{
   padding:10px;
 }
 
-nav li a{
+nav ul li a{
   position:relative;
   color:gray;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-nav li a:hover{
+nav ul li a:hover{
   color:rgb(128,188,236);
 }
 main{
@@ -88,8 +95,13 @@ main{
   margin:50px auto;
   display:block;
 }
-ul li{
+main ul li{
   margin-top:5px;
+}
+main ul li a:hover{
+  background-color:#f24b5f;
+  color:#fff;
+  padding:2px;
 }
 footer{
   clear:both;
