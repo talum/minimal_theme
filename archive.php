@@ -7,21 +7,19 @@ Template Name: Archive Page
 <?php get_header(); ?>
 
 <main>		
-		<?php if (have_posts()) : ?>
-		<?php while (have_posts()) : the_post(); ?>
-		<article>
-			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<span class="byline"><?php the_time('F jS, Y'); ?> in <?php the_category(); ?></span>
-			<?php if (has_post_thumbnail()){
-				echo '<div class="padding-top-right-bottom float-left">';
-				echo the_post_thumbnail('thumbnail', array('class' => 'thumbnail'));
-				echo '</div>';
-			}
-			?>
-			<?php the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>">Read More</a>
-		</article>
- <?php endwhile; ?>
+	<?php // Customized
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+	$the_query = new WP_Query('posts_per_page=3&paged=' . $paged); ?>
+	<?php if ($the_query->have_posts()) : ?>
+	<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+	<article>
+		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<span class="byline"><?php the_time('F jS, Y'); ?> in</span><span class="byline"><?php the_category(); ?></span>
+		<?php the_content('<div class="medium default btn">Read more</div>'); ?>
+		
+	</article>
+  <?php endwhile; ?>
 
 
 		<!--Link Post Navigation-->
@@ -31,11 +29,10 @@ Template Name: Archive Page
 				<div id="right" class="float-right"><p><?php previous_posts_link('Next'); ?></p></div>
 			</div>
 		</div>
-
-	</main>
-<?php wp_reset_postdata(); ?>
-	<?php else:  ?>
-		<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?>
+		<?php wp_reset_postdata(); ?>
+			<?php else:  ?>
+				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+		<?php endif; ?>
+</main>
 
 <?php get_footer(); ?>
