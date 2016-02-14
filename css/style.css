@@ -38,6 +38,11 @@ h2{
   font-size:2rem;
   font-weight: normal;
 }
+h2.page{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+}
 h2 a{
   color:#f24b5f;
   -webkit-transition: all 200ms linear;
