@@ -1,5 +1,7 @@
 <?php
-//Main template
+/*
+Template Name: Index Page
+*/
 ?>
 
 <?php get_header(); ?>
